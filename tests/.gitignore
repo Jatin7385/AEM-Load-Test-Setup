@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Generated test output
+k6-results.json
+docker-stats.json
+test-environment.json
+
+# Generated charts
+*.png
+
+# Config with sensitive data (use config.example.json as template)
+config.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo

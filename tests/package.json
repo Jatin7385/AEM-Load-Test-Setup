@@ -1,0 +1,27 @@
+{
+  "name": "aem-performance-testing",
+  "version": "1.0.0",
+  "description": "k6 load testing suite for AEM with Docker metrics integration",
+  "type": "module",
+  "scripts": {
+    "test": "./run_load_test.sh",
+    "plot": "node plot_k6_results.js",
+    "k6": "k6 run --out json=k6-results.json ping_logger_load_test_k6.js"
+  },
+  "keywords": [
+    "k6",
+    "load-testing",
+    "performance",
+    "aem",
+    "docker"
+  ],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "chartjs-node-canvas": "^5.0.0"
+  }
+}

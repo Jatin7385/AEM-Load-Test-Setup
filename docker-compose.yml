@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  aem-publish:
+    build: ./publish
+    container_name: aem-publish-4503
+    ports:
+      - "4503:4503"
+    volumes:
+      # Persist your existing crx-quickstart
+      - ./publish/crx-quickstart:/aem/crx-quickstart
+      # Deploy packages here
+      - ./packages:/aem/packages
+    environment:
+      - CQ_JAR_FILENAME=aem-publish-p4503.jar
+      - JAVA_OPTS=-Xmx8g -Xms4g -Djava.awt.headless=true -Djava.io.tmpdir=/aem/tmp
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4503/system/console/healthcheck.json"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+
