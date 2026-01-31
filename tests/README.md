@@ -1,4 +1,4 @@
-# AEM Performance Testing Suite
+# AEM API Performance Testing Suite
 
 A comprehensive load testing framework for Adobe Experience Manager (AEM) environments using **k6** with integrated Docker container monitoring and automated visualization.
 
@@ -130,16 +130,6 @@ Java: 11.0.12 | Docker: 24.0.6 | Test: 2026-01-18 15:30:00 IST
 
 1. Find the **inflection point** - the VU count where latency starts degrading
 2. Note the **CPU %** at that point (your capacity threshold)
-3. Apply the formula:
-
-```
-Production Capacity ≈ (Prod CPUs / Local CPUs) × VUs at threshold
-```
-
-**Example:**
-- Local: 500 VUs at 80% CPU on 4-core machine
-- Production: 32-core server
-- Estimated capacity: (32/4) × 500 = **~4000 concurrent users**
 
 ### Caveats
 
@@ -201,7 +191,3 @@ For 1000+ VUs, ensure your machine has:
 |---------|---------|
 | `chart.js` | Chart rendering engine |
 | `chartjs-node-canvas` | Server-side chart generation |
-
-## License
-
-ISC
