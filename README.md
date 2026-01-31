@@ -299,7 +299,7 @@ rm -f k6-results.json docker-stats.json *.png test-environment.json
 
 ## 🤝 Contributing
 
-This is an internal testing framework. Customize for your needs:
+This is testing framework built for personal use. Customize for your needs:
 
 - Add custom k6 test scenarios in `tests/`
 - Modify ramp-up profiles for different load patterns
