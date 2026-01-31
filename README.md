@@ -1,4 +1,4 @@
-# AEM Performance Testing Suite
+# AEM API Performance Testing Suite
 
 Load testing framework for Adobe Experience Manager (AEM) using k6, Docker, and automated metrics collection.
 
@@ -6,8 +6,8 @@ Load testing framework for Adobe Experience Manager (AEM) using k6, Docker, and 
 
 This project provides a complete load testing solution for AEM instances running in Docker containers. It includes:
 
-- **Dockerized AEM Publish** instance with optimized JVM settings
-- **k6 load testing** with configurable virtual users and ramp-up profiles
+- **Dockerized AEM Publish** instance
+- **k6 load testing**
 - **Automated Docker metrics collection** (CPU, memory usage)
 - **Graphical analysis** with response time, concurrent users, and CPU correlation
 - **Test environment metadata** capture for reproducible results
@@ -249,10 +249,6 @@ Ensure you're running from project root:
 docker-compose build ./publish
 ```
 
-### High CPU but low throughput
-
-This is normal for **cold JVM** (< 5 minutes warm-up). The JIT compiler needs time to optimize hot paths. Run longer tests (12+ minutes) for accurate results.
-
 ### Permission errors (macOS)
 
 ```bash
@@ -265,16 +261,7 @@ xattr -cr ./publish/crx-quickstart  # Remove extended attributes
 
 ## 📈 Production Capacity Estimation
 
-Use the inflection point to estimate production capacity:
-
-1. Find VU count where **latency starts degrading**
-2. Note **CPU %** at that point
-3. Calculate: `Production VUs ≈ (Prod CPUs / Local CPUs) × Local VUs`
-
-**Example:**
-- Local test: 500 VUs @ 120% CPU (1.2 cores) on 16-core machine
-- Production: 32 cores available
-- Estimate: `(32 / 16) × 500 = 1000 VUs`
+Use the inflection point to estimate production capacity
 
 ⚠️ **This is a rough estimate.** Real production testing is essential due to:
 - Network latency
@@ -322,7 +309,7 @@ This is an internal testing framework. Customize for your needs:
 
 ## ⚖️ License
 
-Adobe Experience Manager is proprietary software. This testing framework is for **internal use only** with valid AEM licenses.
+Adobe Experience Manager is proprietary software. This testing framework is for personal use.
 
 ---
 
